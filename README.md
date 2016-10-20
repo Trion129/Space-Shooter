@@ -10,7 +10,7 @@ An http server running on your PC to see the website in localhost instead of ope
 https://atom.io/packages/atom-live-server
 
 #### If you have npm run this command to get an alternative tool
-`npm http-server -g`
+`npm install http-server -g`
 
 Now run the server in the directory where you have the project and now you can browse the website just like it would be on codepen
 
