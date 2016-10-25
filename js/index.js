@@ -1,7 +1,8 @@
 let spaceship;
+let canvas;
 
 function setup(){
-  createCanvas(800,800);
+  canvas = createCanvas(800,800);
 
   setupControls(); //TODO
   placeEnemies(); // TODO
