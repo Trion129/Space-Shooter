@@ -27,6 +27,12 @@ var SpaceShip = function (x = 0, y = 0) {
       case moveCodes.UP:
         this.moveUp();
         break;
+      case moveCodes.LEFT:
+        this.moveLeft();
+        break;
+      case moveCodes.RIGHT:
+        this.moveRight();
+        break;
     }
   }
 
@@ -37,6 +43,16 @@ var SpaceShip = function (x = 0, y = 0) {
 
   this.moveUp = function(){
     this.pos.y--;
+    this.draw();
+  }
+
+  this.moveLeft = function () {
+    this.pos.x--;
+    this.draw();
+  }
+
+  this.moveRight = function () {
+    this.pos.x++;
     this.draw();
   }
 
