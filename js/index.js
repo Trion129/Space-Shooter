@@ -1,9 +1,11 @@
+let spaceship;
+
 function setup(){
   createCanvas(800,800);
 
   setupControls(); //TODO
   placeEnemies(); // TODO
-  placeSpaceShip(); //TODO
+  spaceship = placeSpaceShip(); //TODO
 }
 
 function draw(){

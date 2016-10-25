@@ -14,5 +14,5 @@ function updatePositions(){
 
 //Call draw functions of all game objects
 function drawObjects(){
-  //TODO
+  spaceship.draw();
 }
