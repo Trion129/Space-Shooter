@@ -55,5 +55,22 @@ var Enemy = function(x, y){
 
 //Generate Enemies with constructor, give the x and y
 function placeEnemies(){
-  //TODO
+  var numEnemies = 6;
+	for( i=0; i < numEnemies; i++){
+		var p = tmpDim();
+		console.log('new enemy:',p);
+		gameObjects.push(new Enemy(p[0], p[1]));
+	}
+
+	function tmpDim(){
+		var dimX = 20;
+		var dimY = 20;
+		var x;
+		x = rnd( width - dimX ) + dimX/2 ;
+		return [x,dimY];
+	}
+
+	function rnd(x){
+		return Math.floor(Math.random() * 1000 % x)
+	};
 }
