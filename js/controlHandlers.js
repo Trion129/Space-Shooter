@@ -26,7 +26,7 @@ function setupControls() {
 
 //Call update functions of all game objects
 function updatePositions() {
-  //TODO
+  spaceship.update();
 }
 
 

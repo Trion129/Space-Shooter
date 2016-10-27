@@ -2,7 +2,7 @@ let spaceship;
 let canvas;
 
 function setup(){
-  canvas = createCanvas(800,800);
+  canvas = createCanvas(document.body.clientWidth, 500);
 
   setupControls(); //TODO
   placeEnemies(); // TODO
