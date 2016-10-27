@@ -10,11 +10,14 @@ var SpaceShip = function (x = 0, y = 0) {
   //default parameters are to put the spaceShip in the center
   //Variables here
   this.pos = createVector(x, y); //Vector for holding position
-  this.acc = createVector(0, 0); //No acceleration by default
+  this.vel = createVector(0, 0); // Vel changes position
   this.img = loadImage("images/spaceship.png");
   //Functions here
   this.update = function () {
-    this.pos.add(this.acc);
+    this.acc = createVector(0, 0); //No acceleration by default
+    this.acc.mult(0.1); // Gains acceleration in multiples of 0.1
+    this.vel.add(this.acc)
+    this.pos.add(this.vel);
   }
 
   this.move = function (moveCode) {
