@@ -7,7 +7,7 @@ var Enemy = function(x, y){
   this.enemyWidth = 35; // the width of the alien
   this.xVel = createVector(2, 0); // horizontal velocity
   this.yVel = createVector(0, 15); // vertical velocity
-  this.chaceOfShooting = 3; // chance factor that the alien is going to shoot
+  this.chanceOfShooting = 3; // chance factor that the alien is going to shoot
   this.dead = false; // flag for checking if the alien has been hit
   this.incrementNumberOfEnemies();
 
@@ -43,7 +43,7 @@ var Enemy = function(x, y){
   */
   this.shoot = function(){
     var a = Math.round(Math.random() * 1000);
-    if (a < this.chaceOfShooting) {
+    if (a < this.chanceOfShooting) {
       //var bullet = new Bullet(-1);
       console.log("Shoot!");
     }
@@ -97,23 +97,16 @@ Enemy.prototype.checkIfEdge = function()  {
 
 //Generate Enemies with constructor, give the x and y
 function placeEnemies(){
-  var numEnemies = 6;
+  
+  var e = 35;
+  var x = e / 2; 
+  var numEnemies = Math.floor(width / (e * 2));
+  
+  console.log(numEnemies);
 	for( i=0; i < numEnemies; i++){
-		var p = tmpDim();
-		console.log('new enemy:',p);
-
-    gameObjects.push(new Enemy(p[0], p[1]));
+		
+    gameObjects.push(new Enemy(x,e));
+    x += e*2;
 	}
 
-	function tmpDim(){
-		var dimX = 20;
-		var dimY = 20;
-		var x;
-		x = rnd(width - dimX ) + dimX/2 ;
-		return [x,dimY];
-	}
-
-	function rnd(x){
-		return Math.floor(Math.random() * 1000 % x)
-	};
 }
