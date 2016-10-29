@@ -26,12 +26,12 @@ var SpaceShip = function (x, y) {
     switch (moveCode) {
       //TODO make decisions here and apply Force towards that side in acc
       // acc.add(forceVector);
-      case DOWN_ARROW:
-        forceVector.set(0, 1);
-        break;
-      case UP_ARROW:
-        forceVector.set(0, -1);
-        break;
+      // case DOWN_ARROW:
+      //   forceVector.set(0, 1);
+      //   break;
+      // case UP_ARROW:
+      //   forceVector.set(0, -1);
+      //   break;
       case LEFT_ARROW:
         forceVector.set(-1, 0);
         break;
