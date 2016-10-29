@@ -1,5 +1,4 @@
-let spaceship;
-let canvas;
+
 
 function setup(){
   canvas = createCanvas(document.body.clientWidth, 500);
