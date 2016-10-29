@@ -26,11 +26,11 @@ function setupControls() {
 
 //Call update functions of all game objects
 function updatePositions() {
-  gameObjects.forEach(function (e) { o.update(); });
+  gameObjects.forEach(function (o) { o.update(); });
 }
 
 
 //Call draw functions of all game objects
 function drawObjects() {
-  gameObjects.forEach(function (e) { o.draw(); });
+  gameObjects.forEach(function (o) { o.draw(); });
 }
