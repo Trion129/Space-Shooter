@@ -6,6 +6,7 @@ function setup(){
   setupControls(); //TODO
   placeEnemies(); // TODO
   spaceship = placeSpaceShip(); //TODO
+  gameObjects.push(spaceship);
 }
 
 function draw(){
