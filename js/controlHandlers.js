@@ -18,8 +18,8 @@ function setupControls() {
     return code >=37 && code <= 40;
   }
 
-  function isShoot(){
-    return true;
+  function isShoot(code){
+    return code === 32;
   }
 }
 

@@ -44,12 +44,12 @@ var SpaceShip = function (x = width / 2, y = height / 2) {
 
   //Generates a bullet with a force,  upwards
   this.shoot = function () {
-    // TODO
+    var bullet = new Bullet(this.pos.x, this.pos.y, true);
   }
 
   //
   this.draw = function () {
-    image(this.img, this.pos.x, this.pos.y, 50, 50);
+    image(this.img, this.pos.x, this.pos.y, 100, 65);
   }
 }
 
