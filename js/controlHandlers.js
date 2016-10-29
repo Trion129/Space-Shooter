@@ -5,20 +5,20 @@
 ** e.g. if someone presses space, create a bullet object
 */
 function setupControls() {
-  $(document).keydown(({which:code}) => {
-    if (isMovement(code)) {
-      spaceship.move(code);
+  $(document).keydown(function (e) {
+    if (isMovement(e.which)) {
+      spaceship.move(e.which);
     }
-    if (isShoot(code)){
+    if (isShoot(e.which)) {
       spaceship.shoot();
     }
   });
 
-  function isMovement(code){
-    return code >=37 && code <= 40;
+  function isMovement(code) {
+    return code >= 37 && code <= 40;
   }
 
-  function isShoot(code){
+  function isShoot(code) {
     return code === 32;
   }
 }
@@ -26,7 +26,7 @@ function setupControls() {
 
 //Call update functions of all game objects
 function updatePositions() {
-  gameObjects.forEach(o => o.update());
+  gameObjects.forEach(function (e) { o.update(); });
 }
 
 

@@ -1,5 +1,3 @@
-
-
 function setup(){
   canvas = createCanvas(windowWidth, windowHeight-10);
 
