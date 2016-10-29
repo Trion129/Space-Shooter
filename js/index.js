@@ -1,9 +1,10 @@
 function setup(){
-  createCanvas(800,800);
+  canvas = createCanvas(windowWidth, windowHeight-10);
 
   setupControls(); //TODO
   placeEnemies(); // TODO
-  placeSpaceShip(); //TODO
+  spaceship = placeSpaceShip(); //TODO
+  gameObjects.push(spaceship);
 }
 
 function draw(){
