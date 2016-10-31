@@ -8,7 +8,9 @@ var Bullet = function(x, y, up) {
         ? -1
         : + 1));
 
-    this.pos.add(this.acc);
+    this.addAcc = function() {
+        this.pos.add(this.acc);
+    }
 
     this.draw = function() {
         //Draw Bullet at position TODO
@@ -16,6 +18,7 @@ var Bullet = function(x, y, up) {
     }
 
     this.update = function() {
+        this.addAcc();
         this.detectCollision();
     }
 
