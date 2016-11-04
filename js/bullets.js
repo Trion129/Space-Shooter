@@ -4,13 +4,7 @@ var Bullet = function(x, y, up) {
     this.pos = createVector(x, y);
 
     //Creates acceleration upwards or downwards, if up
-    this.acc = createVector(0, BulletForce * (up
-        ? -1
-        : + 1));
-
-    this.addAcc = function() {
-        this.pos.add(this.acc);
-    }
+    this.acc = createVector(0, BulletForce * (up ? -1 : +1));
 
     this.draw = function() {
         //Draw Bullet at position TODO
@@ -18,7 +12,7 @@ var Bullet = function(x, y, up) {
     }
 
     this.update = function() {
-        this.addAcc();
+        this.pos.add(this.acc);
         this.detectCollision();
     }
 
