@@ -1,4 +1,3 @@
-var BulletForce = 5;
 
 var Bullet = function(x, y, up) {
     this.pos = createVector(x, y);
