@@ -21,5 +21,12 @@ var Bullet = function(x, y, up) {
         // are same any of the object, you can assume hitbox to be a rectangle
         // even if the enemies are looking funky
         // TODO
+
+        // if bullet leaves the screen delete it, otherwise amount of bullets slowdowns the game
+        if (this.pos.y < 0 || this.pos.y > canvas.height) {
+            gameObjects.splice(gameObjects.indexOf(this), 1);
+        }
+
+        // TODO collision
     }
 }
