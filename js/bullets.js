@@ -1,9 +1,10 @@
-
 var Bullet = function(x, y, up) {
     this.pos = createVector(x, y);
 
     //Creates acceleration upwards or downwards, if up
-    this.acc = createVector(0, BulletForce * (up ? -1 : +1));
+    this.acc = createVector(0, BulletForce * (up
+        ? -1
+        : + 1));
 
     this.draw = function() {
         //Draw Bullet at position TODO
@@ -26,6 +27,11 @@ var Bullet = function(x, y, up) {
             gameObjects.splice(gameObjects.indexOf(this), 1);
         }
 
-        // TODO collision
-    }
+        // detect collision with spaceship
+        if (this.pos.y === spaceship.pos.y) {
+            if (this.pos.x >= spaceship.pos.x && this.pos.x <= spaceship.pos.x + 100)
+                // TODO END OF THE GAME, AND restart ?
+                console.log('HIT spaceship.dead = true', spaceship.pos.x, spaceship.pos.y); // delete this line in the future
+            }
+        }
 }
