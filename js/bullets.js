@@ -2,9 +2,7 @@ var Bullet = function(x, y, up) {
     this.pos = createVector(x, y);
 
     //Creates acceleration upwards or downwards, if up
-    this.acc = createVector(0, BulletForce * (up
-        ? -1
-        : + 1));
+    this.acc = createVector(0, BulletForce * (up ? -1 : +1));
 
     this.draw = function() {
         //Draw Bullet at position TODO
@@ -28,10 +26,28 @@ var Bullet = function(x, y, up) {
         }
 
         // detect collision with spaceship
-        if (this.pos.y === spaceship.pos.y) {
-            if (this.pos.x >= spaceship.pos.x && this.pos.x <= spaceship.pos.x + 100)
+        if (this.pos.x >= spaceship.pos.x && this.pos.x <= spaceship.pos.x + spaceship.img.width) {
+            if (this.pos.y === spaceship.pos.y) {
                 // TODO END OF THE GAME, AND restart ?
-                console.log('HIT spaceship.dead = true', spaceship.pos.x, spaceship.pos.y); // delete this line in the future
+                console.log('HIT spaceship - GAME OVER'); // TODO delete this line in the future
             }
         }
+
+        // detect collision with enemies
+        for (var i = 0; i < gameObjects.length; i++) {
+            if (gameObjects[i]instanceof Bullet === false) {
+                if (this.pos.y === gameObjects[i].pos.y) {
+                    if (this.pos.x >= gameObjects[i].pos.x && this.pos.x <= gameObjects[i].pos.x + 35) {
+
+                        console.log('HIT ALIEN'); // TODO delete this line in the future
+                        // gameObjects[i].dead = true;
+                        gameObjects[i].chanceOfShooting = 0;
+                        gameObjects[i].yVel = createVector(0, -50);
+                        // gameObjects.splice(i, 1); //delete hited alien from game
+                    }
+                }
+            }
+        }
+
+    }
 }
