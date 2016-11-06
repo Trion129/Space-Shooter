@@ -25,6 +25,28 @@ var Bullet = function(x, y, up) {
             gameObjects.splice(gameObjects.indexOf(this), 1);
         }
 
-        // TODO collision
+        // detect collision with spaceship
+        if (this.pos.x >= spaceship.pos.x && this.pos.x <= spaceship.pos.x + spaceship.img.width) {
+            if (this.pos.y === spaceship.pos.y) {
+                // TODO END OF THE GAME, AND restart ?
+                console.log('HIT spaceship - GAME OVER'); // TODO delete this line in the future
+            }
+        }
+
+        // detect collision with enemies
+        for (var i = 0; i < gameObjects.length; i++) {
+            if (gameObjects[i]instanceof Bullet === false) {
+                if (this.pos.y === gameObjects[i].pos.y) {
+                    if (this.pos.x >= gameObjects[i].pos.x && this.pos.x <= gameObjects[i].pos.x + 35) {
+
+                        console.log('HIT ALIEN'); // TODO delete this line in the future
+                        // gameObjects[i].dead = true;
+                        gameObjects[i].chanceOfShooting = 0;
+                        gameObjects[i].yVel = createVector(0, -50);
+                        // gameObjects.splice(i, 1); //delete hited alien from game
+                    }
+                }
+            }
+        }
     }
 }

@@ -46,10 +46,10 @@ var SpaceShip = function (x, y) {
 
   //Generates a bullet with a force,  upwards
   this.shoot = function () {
-    var bullet = new Bullet(this.pos.x, this.pos.y, true);
+    var bullet = new Bullet(this.pos.x + this.img.width/2, this.pos.y, true);
+    gameObjects.push(bullet);
   }
 
-  //
   this.draw = function () {
     image(this.img, this.pos.x, this.pos.y, 100, 65);
   }

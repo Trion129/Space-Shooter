@@ -11,7 +11,7 @@ var Enemy = function(x, y){
   this.dead = false; // flag for checking if the alien has been hit
   this.incrementNumberOfEnemies();
 
-  var sprite = loadImage("invader1.png");
+  var sprite = loadImage("invader1.jpg");
 
   /*
     Moves the alien down by yVel and changes his direction
@@ -44,7 +44,8 @@ var Enemy = function(x, y){
   this.shoot = function(){
     var a = Math.round(Math.random() * 1000);
     if (a < this.chanceOfShooting) {
-      //var bullet = new Bullet(-1);
+      var bullet = new Bullet(this.pos.x + this.enemyWidth/2, this.pos.y + this.enemyWidth, false);
+      gameObjects.push(bullet);
       console.log("Shoot!");
     }
   }
@@ -97,14 +98,14 @@ Enemy.prototype.checkIfEdge = function()  {
 
 //Generate Enemies with constructor, give the x and y
 function placeEnemies(){
-  
+
   var e = 35;
-  var x = e / 2; 
+  var x = e / 2;
   var numEnemies = Math.floor(width / (e * 2));
-  
+
   console.log(numEnemies);
 	for( i=0; i < numEnemies; i++){
-		
+
     gameObjects.push(new Enemy(x,e));
     x += e*2;
 	}
