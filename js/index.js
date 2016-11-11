@@ -12,3 +12,8 @@ function draw(){
   updatePositions(); //TODO
   drawObjects(); //TODO
 }
+
+// for testing: mouse click on canvas stop and resume game
+
+function mousePressed(){ loop(); }
+function mouseReleased(){ noLoop(); }

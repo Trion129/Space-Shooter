@@ -14,7 +14,7 @@ var Enemy = function(x, y) {
     var sprite = loadImage("images/invader.jpg");
     var deadSprite = loadImage("images/deadInvader.jpg");
 
-    /*
+  /*
     Moves the alien down by yVel and changes his direction
   */
     this.moveDown = function() {
