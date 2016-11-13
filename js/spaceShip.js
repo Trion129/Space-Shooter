@@ -9,7 +9,7 @@ var SpaceShip = function(x, y) {
     this.acc = createVector(0, 0);
 
     //Functions here
-    this.update = function update() {
+    this.update = function() {
         this.pos.add(this.acc);
         if (this.pos.x < 0) {
             this.pos.x = 0.1;
@@ -21,7 +21,11 @@ var SpaceShip = function(x, y) {
             this.pos.add(this.acc);
         }
     }
-
+    
+    this.stopMove = function() {
+        this.acc.mult(0);
+    }
+    
     this.move = function(moveCode) {
         var forceVector = createVector(0, 0);
         switch (moveCode) {

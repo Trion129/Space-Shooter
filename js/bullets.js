@@ -60,13 +60,17 @@ var Bullet = function(x, y, up) {
 
         for (var i = 0; i < gameObjects.length; i++) {
             // detect Enemy
-            if (gameObjects[i]instanceof Enemy === true && this.directionUpward === true) {
+            if (gameObjects[i]instanceof Enemy === true && !gameObjects[i].dead && this.directionUpward === true) {
                 if (this.pos.x + this.width / 2 >= gameObjects[i].pos.x && this.pos.x + this.width / 2 <= gameObjects[i].pos.x + gameObjects[i].enemyWidth) {
                     if (this.distanceToGameObject(gameObjects[i])) {
                         gameObjects[i].dead = true;
                         gameObjects[i].chanceOfShooting = 0; // TODO delete this line in the future
                         gameObjects[i].yVel = createVector(0, -10); // TODO delete this line in the future
                         gameObjects.splice(gameObjects.indexOf(this), 1); //delete bullet from game :)
+                        score++;
+                        if(score == 12){
+                          gameOver = true;
+                        }
                     }
                 }
             } else
@@ -74,7 +78,7 @@ var Bullet = function(x, y, up) {
             if (gameObjects[i]instanceof SpaceShip === true && this.directionUpward === false) {
                 if (this.pos.x + this.width / 2 >= gameObjects[i].pos.x && this.pos.x + this.width / 2 <= gameObjects[i].pos.x + gameObjects[i].img.width) {
                     if (this.distanceToGameObject(gameObjects[i])) {
-                        location.reload(true); // restart game
+                        gameOver = true;
                     }
                 }
             } else

@@ -41,6 +41,9 @@ var Enemy = function(x, y) {
     a random value.
   */
     this.shoot = function() {
+        if(this.pos.y > windowHeight){
+          gameOver = true;
+        }
         var a = Math.round(Math.random() * 1000);
         if (a < this.chanceOfShooting) {
             var bullet = new Bullet(this.pos.x + this.enemyWidth / 2, this.pos.y + this.enemyWidth, false);

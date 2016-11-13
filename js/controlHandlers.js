@@ -13,6 +13,12 @@ function setupControls() {
       spaceship.shoot();
     }
   });
+  
+  $(document).keyup(function (e) {
+    if (isMovement(e.which)) {
+      spaceship.stopMove();
+    }
+  });
 
   function isMovement(code) {
     return code >= 37 && code <= 40;
