@@ -14,12 +14,16 @@ function draw(){
     drawObjects();
   }
   else{
+    if(!refreshed){
+      setTimeout(resetEverything, 3000 );
+      refreshed = true;
+    }
     fill(255);
     gameOverTextSize = constrain(gameOverTextSize,0,50);
     textSize(gameOverTextSize);
     rectMode(CENTER);
     text("Game Over", windowWidth*(1/4 + 1/8), windowHeight/2);
-    if(score == 12){
+    if(score == numEnemies){
       text("You Won!", windowWidth*(1/4 + 1/7), windowHeight/2 + 100);
     }
     gameOverTextSize += 2;
