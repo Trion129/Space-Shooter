@@ -68,7 +68,7 @@ var Bullet = function(x, y, up) {
                         gameObjects[i].yVel = createVector(0, -10); // TODO delete this line in the future
                         gameObjects.splice(gameObjects.indexOf(this), 1); //delete bullet from game :)
                         score++;
-                        if(score == 12){
+                        if(score == numEnemies){
                           gameOver = true;
                         }
                     }

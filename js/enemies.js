@@ -109,7 +109,7 @@ function placeEnemies() {
 
     var e = 35;
     var x = e / 2;
-    var numEnemies = Math.floor(width / (e * 2));
+    numEnemies = Math.floor(width / (e * 2));
 
     // console.log(numEnemies);
     for (i = 0; i < numEnemies; i++) {

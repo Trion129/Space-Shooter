@@ -5,3 +5,4 @@ var BulletForce = 5;
 var gameOver = false;
 var gameOverTextSize = 0;
 var score = 0;
+var numEnemies = 0;
