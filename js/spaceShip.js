@@ -9,7 +9,7 @@ var SpaceShip = function(x, y) {
     this.acc = createVector(0, 0);
 
     //Functions here
-    this.update = function update() {
+    this.update = function() {
         this.pos.add(this.acc);
         if (this.pos.x < 0) {
             this.pos.x = 0.1;
@@ -21,7 +21,11 @@ var SpaceShip = function(x, y) {
             this.pos.add(this.acc);
         }
     }
-
+    
+    this.stopMove = function() {
+        this.acc.mult(0);
+    }
+    
     this.move = function(moveCode) {
         var forceVector = createVector(0, 0);
         switch (moveCode) {
@@ -34,7 +38,7 @@ var SpaceShip = function(x, y) {
                 //   forceVector.set(0, -1);
                 //   break;
             case LEFT_ARROW:
-                console.log(this.acc.x);
+                // console.log(this.acc.x);
                 if (this.acc.x > 0) {
                     this.acc.x = 0;
                     this.acc.x += -2;
@@ -43,7 +47,7 @@ var SpaceShip = function(x, y) {
                 }
                 break;
             case RIGHT_ARROW:
-                console.log(this.acc.x);
+                // console.log(this.acc.x);
                 if (this.acc.x < 0) {
                     this.acc.x = 0;
                     this.acc.x += 2;
@@ -56,18 +60,18 @@ var SpaceShip = function(x, y) {
                 break;
 
         }
-    }
+    };
 
     //Generates a bullet with a force,  upwards
     this.shoot = function() {
         var bullet = new Bullet(this.pos.x + this.img.width / 2, this.pos.y, true);
         gameObjects.push(bullet);
-    }
+    };
 
     this.draw = function() {
         image(this.img, this.pos.x, this.pos.y, 100, 65);
-    }
-}
+    };
+};
 
 //Generate SpaceShip with constructor, give the x and y
 function placeSpaceShip() {
