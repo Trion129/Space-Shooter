@@ -21,10 +21,10 @@ function draw(){
     fill(255);
     gameOverTextSize = constrain(gameOverTextSize,0,50);
     textSize(gameOverTextSize);
-    rectMode(CENTER);
-    text("Game Over", windowWidth*(1/4 + 1/8), windowHeight/2);
+    textAlign(CENTER);
+    text("Game Over", windowWidth * 0.5, windowHeight * 0.5 + 15);
     if(score == numEnemies){
-      text("You Won!", windowWidth*(1/4 + 1/7), windowHeight/2 + 100);
+      text("You Won!", windowWidth * 0.5, windowHeight * 0.5 + 15);
     }
     gameOverTextSize += 2;
   }
