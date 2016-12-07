@@ -22,9 +22,11 @@ function draw(){
     gameOverTextSize = constrain(gameOverTextSize,0,50);
     textSize(gameOverTextSize);
     textAlign(CENTER);
-    text("Game Over", windowWidth * 0.5, windowHeight * 0.5 + 15);
     if(score == numEnemies){
       text("You Won! Code is: MediumOfRiddles", windowWidth * 0.5, windowHeight * 0.5 + 15);
+    }
+    else{
+      text("Game Over", windowWidth * 0.5, windowHeight * 0.5 + 15);
     }
     gameOverTextSize += 2;
   }
