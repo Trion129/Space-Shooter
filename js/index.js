@@ -15,7 +15,7 @@ function draw(){
   }
   else{
     if(!refreshed){
-      setTimeout(resetEverything, 3000 );
+      setTimeout(resetEverything, 7000 );
       refreshed = true;
     }
     fill(255);
@@ -24,7 +24,7 @@ function draw(){
     rectMode(CENTER);
     text("Game Over", windowWidth*(1/4 + 1/8), windowHeight/2);
     if(score == numEnemies){
-      text("You Won!", windowWidth*(1/4 + 1/7), windowHeight/2 + 100);
+      text("You Won! Code is: MediumOfRiddles", windowWidth*(1/4 + 1/7), windowHeight/2 + 100);
     }
     gameOverTextSize += 2;
   }
